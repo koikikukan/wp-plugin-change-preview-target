@@ -264,10 +264,14 @@ jQuery(document).ready(function (b)
 function wp_change_preview_target_add_custom_box() {
   if( function_exists( 'add_meta_box' )) {
     load_plugin_textdomain( 'wp_change_preview_target', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-    add_meta_box( 'wp_change_preview_target', __('Publish with new window','wp_change_preview_target'), 'post_submit_meta_box_with_change_preview_target', 'post', 'advanced' );
+    add_meta_box( 'wp_change_preview_target', __('Publish with new window','wp_change_preview_target'), 'post_submit_meta_box_with_change_preview_target', 'post', 'side' );
+// don't work
+//    remove_meta_box('submitdiv', 'post', 'side'); 
   }
 }
 
 add_action('admin_menu', 'wp_change_preview_target_add_custom_box');
+?>
+
 
 ?>
